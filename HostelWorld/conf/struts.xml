@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+<package name="Hostel" extends="struts-default">
+
+<action name="login" class="LoginAction">
+<result name="success">/hostel/ScanningFilm.jsp</result>
+	<result name="hostel">/hostel/Administrator.jsp</result>
+<result name="failure">/hostel/Fail.jsp</result>
+<result name="invalid">/hostel/Tip_invalid.jsp</result>
+<result name="register">/hostel/Register.jsp</result>
+	<result name="hostelregister">/hostel/HostelRegister.jsp</result>
+</action>
+
+	<!--<action name="test" class="LoginAction" method="test">-->
+		<!--<result name="fail">/hostel/Tip_invalid.jsp</result>-->
+		<!--<result name="success">/hostel/Fail.jsp</result>-->
+	<!--</action>-->
+
+
+
+<action name="/*" class="IndexAction">
+<result>/hostel/Login.jsp</result>
+</action>
+
+<action name="register" class="RegisterAction">
+<result>/hostel/Tip_register.jsp</result>
+</action>
+	<!--<action name="hostelregister" class="HostelRegisterAction">-->
+		<!--<result>/hostel/Tip_hostelregister.jsp</result>-->
+	<!--</action>-->
+
+<action name="bindBankCard" class="BindBankCardAction">
+<result>/hostel/Recharge.jsp</result>
+</action>
+
+<action name="enterRecharge" class="RechargeAction">
+<result name="bindCard">/hostel/BindBankCard.jsp</result>
+<result name="recharge">/hostel/Recharge.jsp</result>
+</action>
+
+
+<action name="recharge" class="RechargeAction" method="recharge">
+<result>/hostel/Tip_invalid.jsp</result>
+<result>/hostel/ScanningFilm.jsp</result>
+</action>
+
+<action name="createPlan" class="CreatePlanAction">
+<result>/hostel/Administrator.jsp</result>
+</action>
+
+	<action name="createRoomPlan" class="CreateRoomPlanAction">
+		<result>/hostel/Administrator.jsp</result>
+	</action>
+
+<action name="admin" class="AdminAction">
+<result>/hostel/AdminLogin.jsp</result>
+</action>
+
+<action name="adminHomePage" class="AdminAction" method="adminHomePage">
+<result>/hostel/Administrator.jsp</result>
+</action>
+
+<action name="managerHomePage" class="AdminAction" method="managerHomePage">
+<result>/hostel/Manager.jsp</result>
+</action>
+
+
+<action name="adminLogin" class="AdminLoginAction">
+<result name="server">/hostel/Administrator.jsp</result>
+<result name="manager">/hostel/Manager.jsp</result>
+</action>
+
+<action name="checkPlan" class="CheckPlanAction" method="processPlan">
+<result>/hostel/CheckPlan.jsp</result>
+</action>
+
+	<action name="checkHostel" class="CheckHostelPlanAction" method="processPlan">
+		<result>/hostel/CheckHostelPlan.jsp</result>
+	</action>
+
+	<action name="checkHostelInfo" class="CheckHostelInfoPlanAction" method="processPlan">
+		<result>/hostel/CheckHostelInfoPlan.jsp</result>
+	</action>
+
+<action name="enterCheck" class="CheckPlanAction">
+<result name="checkPlan">/hostel/CheckPlan.jsp</result>
+</action>
+	<action name="enterHostelCheck" class="CheckHostelPlanAction">
+		<result name="checkHostel">/hostel/CheckHostelPlan.jsp</result>
+	</action>
+	<action name="enterHostelInfoCheck" class="CheckHostelInfoPlanAction">
+		<result name="checkHostelInfo">/hostel/CheckHostelInfoPlan.jsp</result>
+	</action>
+
+<action name="currentFilm" class="ServerAction">
+<result>/hostel/CurrentFilm.jsp</result>
+</action>
+
+<action name="filmInfo" class="ServerAction" method="filmInfo">
+<result name="filmInfo">/hostel/FilmSession.jsp</result>
+</action>
+
+<action name="enterSale" class="ServerAction" method="enterSale">
+<result name="sale">/hostel/SaleTicket.jsp</result>
+</action>
+
+<action name="saleTicket" class="SaleTicketAction">
+<result>/hostel/FilmSession.jsp</result>
+<result name="member">/hostel/SaleTicket_Member.jsp</result>
+</action>
+
+<action name="enterQuestion" class="PutQuestionAction" method="enterQuestion">
+<result>/hostel/PutQuestion.jsp</result>
+</action>
+
+<action name="putQuestion" class="PutQuestionAction">
+<result>/hostel/Administrator.jsp</result>
+</action>
+
+<action name="enterCreatePlan" class="CreatePlanAction" method="enterCreatePlan">
+<result>/hostel/CreateRoomPlan.jsp</result>
+</action>
+
+<action name="userFilmInfo" class="BuyTicketAction">
+<result>/hostel/FilmInfo.jsp</result>
+</action>
+
+<action name="buyTicket" class="BuyTicketAction" method="buyTicket">
+<result>/hostel/BuyTicket_Member.jsp</result>
+</action>
+
+<action name="enterBuy" class="EnterBuyAction">
+<result>/hostel/BuyTicket.jsp</result>
+</action >
+
+<action name="personInfo" class="MemberAction" method="personInfo">
+<result>/hostel/PersonInfo.jsp</result>
+</action>
+
+
+<action name="userSet" class="MemberAction" method="userSet">
+<result>/hostel/UserSet.jsp</result>
+</action>
+
+<action name="memberInfo" class="MemberAction">
+<result>/hostel/MemberInfo.jsp</result>
+</action>
+
+<action name="enterModify" class="ModifyPlanAction" method="enterModify">
+<result>/hostel/ModifyPlan.jsp</result>
+</action>
+
+	<action name="hostelInfo" class="HostelAction" method="hostelInfo">
+		<result>/hostel/HostelInfo.jsp</result>
+	</action>
+
+	<action name="enterHostelModify" class="ModifyHostelPlanAction" method="enterModify">
+		<result name="change">/hostel/ReuseHostel.jsp</result>
+		<result name="cancel">/hostel/HostelInfo.jsp</result>
+		<result name="continue">/hostel/ReuseHostelPlan.jsp</result>
+</action>
+
+	<!--<action name="modifyHostel" class="ModifyHostelPlanAction">-->
+		<!--<result>/hostel/ModifyHostel.jsp</result>-->
+		<!--<result name="modify">/hostel/ReuseHostel.jsp</result>-->
+	<!--</action>-->
+
+	<action name="resaveHostel" class="ModifyHostelPlanAction">
+		<result>/hostel/HostelInfo.jsp</result>
+	</action>
+
+	<action name="resaveHostelPlan" class="ModifyHostelPlanAction" method="continueModifyPlan">
+		<result>/hostel/HostelInfo.jsp</result>
+	</action>
+
+<action name="modifyPlan" class="ModifyPlanAction">
+<result>/hostel/ModifyPlan.jsp</result>
+<result name="modify">/hostel/ReusePlan.jsp</result>
+</action>
+
+<action name="resavePlan" class="ResavePlanAction">
+<result>/hostel/ModifyPlan.jsp</result>
+</action>
+
+<action name="enterAnswer" class="AnswerQuestionAction" method="enterAnswer">
+<result>/hostel/AnswerQuestion.jsp</result>
+</action>
+
+<action name="answer" class="AnswerQuestionAction">
+<result>/hostel/ScanningFilm.jsp</result>
+</action>
+
+<action name="enterSearch" class="ServerAction" method="enterSearch">
+<result>/hostel/SearchMemberInfo.jsp</result>
+</action>
+
+<action name="search" class="ServerAction" method="searchResult">
+<result name="noInfo">/hostel/NoMemberInfoResult.jsp</result>
+<result>/hostel/MemberInfoResult.jsp</result>
+</action>
+
+<action name="enterRegister" class="RegisterAction" method="enterRegister">
+<result>/hostel/Register.jsp</result>
+</action>
+
+	<action name="enterHostelRegister" class="HostelRegisterAction" method="enterRegister">
+		<result>/hostel/HostelRegister.jsp</result>
+	</action>
+
+
+	<action name="hostelRegister" class="HostelRegisterAction">
+		<result>/hostel/Tip_hostelregister.jsp</result>
+	</action>
+
+<action name="enterModifyProfile" class="ModifyProfileAction" method="enterModifyProfile">
+<result>/hostel/ModifyProfile.jsp</result>
+</action>
+
+<action name="modifyProfile" class="ModifyProfileAction">
+<result>/hostel/MemberInfo.jsp</result>
+</action>
+
+<action name="exchange" class="MemberAction" method="exchange">
+<result>/hostel/MemberInfo.jsp</result>
+</action>
+
+<action name="enterNewSale" class="NewSaleAction" method="enterNewSale">
+<result>/hostel/Test.jsp</result>
+</action>
+
+<action name="newSale" class="NewSaleAction">
+<result>/hostel/SaleTicket.jsp</result>
+</action>
+
+<action name="memberSale" class="SaleTicketAction" method="memberSale">
+<result name="nsf">/hostel/Warnning_NSF.jsp</result>
+<result>/hostel/Administrator.jsp</result>
+</action>
+
+<action name="logout" class="LogoutAction">
+<result>/hostel/Login.jsp</result>
+</action>
+
+<action name="memHomePage" class="MemberAction" method="enterHomePage">
+<result>/hostel/ScanningFilm.jsp</result>
+</action>
+
+<action name="afterCount" class="BuyTicketAction" method="afterCount">
+<result>/hostel/ScanningFilm.jsp</result>
+<result name="nsf">/hostel/Warnning_NSF.jsp</result>
+</action>
+
+<action name="ageRatio" class="ChartAction" method="ageRatio">
+<result>/hostel/Chart_age.jsp</result>
+</action>
+
+<action name="sexRatio" class="ChartAction" method="sexRatio">
+<result>/hostel/Chart_sex.jsp</result>
+</action>
+
+<action name="consumeRatio" class="ChartAction" method="consumeRatio">
+<result>/hostel/Chart_consume.jsp</result>
+</action>
+
+<action name="activityRatio" class="ChartAction" method="activityRatio">
+<result>/hostel/Chart_activity.jsp</result>
+</action>
+
+<action name="memberRatio" class="ChartAction" method="memberRatio">
+<result>/hostel/Chart_member.jsp</result>
+</action>
+
+<action name="monthChart" class="ChartAction" method="monthChart">
+<result>/hostel/Chart_month.jsp</result>
+</action>
+
+<action name="businessChart" class="ChartAction" method="businessChart">
+<result>/hostel/Chart_business.jsp</result>
+</action>
+
+<action name="filmChart" class="ChartAction" method="filmChart">
+<result>/hostel/Chart_film.jsp</result>
+</action>
+
+<action name="fullChart" class="ChartAction" method="fullChart">
+<result>/hostel/Chart_full.jsp</result>
+</action>
+
+<action name="seatChart" class="ChartAction" method="seatChart">
+<result>/hostel/Chart_interest.jsp</result>
+</action>
+
+<action name="timeChart" class="ChartAction" method="timeChart">
+<result>/hostel/Chart_time.jsp</result>
+</action>
+
+<action name="areaChart" class="ChartAction" method="areaChart">
+<result>/hostel/Chart_area.jsp</result>
+</action>
+
+<action name="adminLogout" class="AdminLogoutAction">
+<result>/hostel/AdminLogin.jsp</result>
+</action>
+
+<action name="enterDown" class="ServerAction" method="enterDown">
+<result>/hostel/DownFilm.jsp</result>
+</action>
+
+<action name="downFilm" class="ServerAction" method="downFilm">
+<result>/hostel/Success_down.jsp</result>
+</action>
+
+</package>
+</struts>

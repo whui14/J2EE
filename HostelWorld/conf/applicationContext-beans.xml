@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"  
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+         xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd  
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd  
+           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd  
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd" >
+
+	<bean id="IndexAction" class="hostel_world.action.IndexAction" scope="prototype" >
+	</bean>
+	
+	<bean id="AdminAction" class="hostel_world.action.AdminAction" scope="prototype" >
+	</bean>
+	
+	<bean id="LoginAction" class="hostel_world.action.LoginAction" scope="prototype">
+	</bean>
+	
+	<bean id="AdminLoginAction" class="hostel_world.action.AdminLoginAction" scope="prototype">
+	</bean>
+
+	<bean id="RegisterAction" class="hostel_world.action.RegisterAction" scope="prototype">
+	</bean>
+	
+	<bean id="BindBankCardAction" class="hostel_world.action.BindBankCardAction" scope="prototype">
+	</bean>
+	
+	<bean id="RechargeAction" class="hostel_world.action.RechargeAction" scope="prototype">
+	</bean>
+
+	<bean id="CreatePlanAction" class="hostel_world.action.CreatePlanAction" scope="prototype">
+	</bean>
+
+	<bean id="CreateRoomPlanAction" class="hostel_world.action.CreateRoomPlanAction" scope="prototype">
+	</bean>
+	
+	<bean id="CheckPlanAction" class="hostel_world.action.CheckPlanAction" scope="prototype">
+	</bean>
+
+	<bean id="CheckHostelPlanAction" class="hostel_world.action.CheckHostelPlanAction" scope="prototype">
+	</bean>
+
+	<bean id="CheckHostelInfoPlanAction" class="hostel_world.action.CheckHostelInfoPlanAction" scope="prototype">
+	</bean>
+
+	<bean id="ServerAction" class="hostel_world.action.ServerAction" scope="prototype">
+	</bean>
+	
+	<bean id="SaleTicketAction" class="hostel_world.action.SaleTicketAction" scope="prototype">
+	</bean>
+	
+	<bean id="PutQuestionAction" class="hostel_world.action.PutQuestionAction" scope="prototype">
+	</bean>
+	
+	<bean id="BuyTicketAction" class="hostel_world.action.BuyTicketAction" scope="prototype">
+	</bean>
+	
+	<bean id="EnterBuyAction" class="hostel_world.action.EnterBuyAction" scope="prototype">
+	</bean>
+	
+	<bean id="MemberAction" class="hostel_world.action.MemberAction" scope="prototype">
+	</bean>
+
+	<bean id="HostelAction" class="hostel_world.action.HostelAction" scope="prototype">
+	</bean>
+	
+	<bean id="ModifyPlanAction" class="hostel_world.action.ModifyPlanAction" scope="prototype">
+	</bean>
+
+	<bean id="ModifyHostelPlanAction" class="hostel_world.action.ModifyHostelPlanAction" scope="prototype">
+	</bean>
+
+	<bean id="ResavePlanAction" class="hostel_world.action.ResavePlanAction" scope="prototype">
+	</bean>
+	
+	<bean id="AnswerQuestionAction" class="hostel_world.action.AnswerQuestionAction" scope="prototype">
+	</bean>
+	
+	<bean id="ModifyProfileAction" class="hostel_world.action.ModifyProfileAction" scope="prototype">
+	</bean>
+	
+	<bean id="NewSaleAction" class="hostel_world.action.NewSaleAction" scope="prototype">
+	</bean>
+	
+	<bean id="LogoutAction" class="hostel_world.action.LogoutAction" scope="prototype">
+	</bean>
+	
+	<bean id="ChartAction" class="hostel_world.action.ChartAction" scope="prototype">
+	</bean>
+	
+	<bean id="AdminLogoutAction" class="hostel_world.action.AdminLogoutAction" scope="prototype">
+	</bean>
+
+	<bean id="HostelRegisterAction" class="hostel_world.action.HostelRegisterAction" scope="prototype">
+	</bean>
+</beans>

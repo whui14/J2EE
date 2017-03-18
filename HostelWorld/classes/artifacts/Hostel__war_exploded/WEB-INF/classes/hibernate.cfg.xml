@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+<session-factory>
+
+<!-- hibernate的方言，用来确定连接的数据库 -->
+
+<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+
+<!-- 在使用hibernate时会显示相应的SQL -->
+
+<property name="hibernate.show_sql">true</property>
+
+<!--生成数据表的策略-->
+<property name="hibernate.format_sql">true</property>
+
+<!--配置自动提交-->
+<property name="hibernate.connection.autocommit">true</property>
+
+<!-- 会自动完成类到数据表的转换 -->
+
+<property name="hibernate.hbm2ddl.auto">update</property>
+
+<mapping class="hostel_world.model.User"/>
+<mapping class="hostel_world.model.Plan"/>
+<mapping class="hostel_world.model.Payment"/>
+<mapping class="hostel_world.model.Consumption"/>
+<mapping class="hostel_world.model.Account"/>
+<mapping class="hostel_world.model.Film"/>
+<mapping class="hostel_world.model.TicketManage"/>
+<mapping class="hostel_world.model.Question"/>
+<mapping class="hostel_world.model.QuestionMap"/>
+<mapping class="hostel_world.model.Answer"/>
+<mapping class="hostel_world.model.AnswerMap"/>
+<mapping class="hostel_world.model.Seat"/>
+
+</session-factory>
+
+</hibernate-configuration>
+
+
+
+
+
+
+
+
+
