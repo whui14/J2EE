@@ -49,4 +49,9 @@ public interface HostelService {
     public void vetoPlan(Integer id);
 
     void setPassValue(Integer id, Integer value);
+    /**
+     * 获得已经通过的客栈申请
+     * @return
+     */
+    public List<Object> getPassedHostelPlan();
 }

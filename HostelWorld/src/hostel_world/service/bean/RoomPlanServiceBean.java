@@ -24,19 +24,6 @@ public class RoomPlanServiceBean implements RoomPlanService {
 	
 	public void createNewRoomPlan(RoomPlan plan) {
 		planDaoImpl.addRoomPlan(plan);
-		
-//		if(!filmDaoImpl.searchFilm(plan.getTitle())){//假如当前电影尚未存入数据库 则添加新的电影信息
-//			Film film=new Film();
-//			film.setTitle(plan.getTitle());
-//			film.setDirector(plan.getDirector());
-//			film.setDuration(plan.getDuration());
-//			film.setFirstRunTime(plan.getFirstRunTime());
-//			film.setLanguage(plan.getLanguage());
-//			film.setType(plan.getType());
-//			film.setPosturl(plan.getPosturl());
-//
-//			filmDaoImpl.addNewFilm(film);
-//		}
 	}
 
 	
@@ -80,16 +67,6 @@ public class RoomPlanServiceBean implements RoomPlanService {
 		return planDaoImpl.getRoomPlanInfo(id);
 	}
 
-	public List getFilmList() {
-		List list=planDaoImpl.getFilmList();
-		List filmList=new ArrayList();
-		for(int i=0;i<list.size();i++){
-			String title=(String)list.get(i);
-			Film film=filmDaoImpl.getFilm(title);
-			filmList.add(film);
-		}
-		return filmList;
-	}
 
 	public List getCurrentRoomPlan(String title) {
 		return planDaoImpl.getCurrentRoomPlan(title);

@@ -2,18 +2,18 @@ package hostel_world.action;
 
 import java.util.List;
 
-import hostel_world.service.PaymentService;
+import hostel_world.model.Hostel;
+import hostel_world.model.HostelPlan;
+import hostel_world.model.list.HostelList;
+import hostel_world.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import hostel_world.model.list.FilmList;
 import hostel_world.model.list.PaymentList;
-import hostel_world.service.AccountService;
 import hostel_world.model.Account;
 import hostel_world.model.User;
 import hostel_world.model.list.ConsumptionList;
-import hostel_world.service.ConsumptionService;
-import hostel_world.service.PlanService;
 
 import com.opensymphony.xwork2.Action;
 
@@ -27,8 +27,11 @@ public class MemberAction extends BaseAction  implements Action{
 	private AccountService accountServiceBean;
 	@Autowired
 	private PlanService planServiceBean;
-	
-	
+	@Autowired
+	private HostelService hostelServiceBean;
+	@Autowired
+	private HostelPlanService hostelPlanServiceBean;
+
 	public String execute() throws Exception {
 		User user=(User)session.get("user");
 		Account account=accountServiceBean.getAccount(user.getId());
@@ -66,9 +69,9 @@ public class MemberAction extends BaseAction  implements Action{
 	}
 	
 	public String enterHomePage(){
-		FilmList filmList=new FilmList();
-		filmList.setFilmList(planServiceBean.getFilmList());
-		session.put("filmList", filmList);
+		HostelList hostelList=new HostelList();
+		hostelList.setHostelList(hostelServiceBean.getPassedHostelPlan());
+		session.put("hostelList", hostelList);
 		return SUCCESS;
 	}
 

@@ -24,7 +24,7 @@
 	  <ul class="nav navbar-nav navbar-right">
 	  <li class="active"><a class="navbar-brand" href="#"><span class="glyphicon glyphicon-user"></span> <%=hostel.getHostelName()%></a></li>
 	  <li><a href="#"><span class="glyphicon glyphicon-cog"></span></a><li>
-	  <li><a href="adminLogout.action"><span class="glyphicon glyphicon-off"></span></a><li>
+	  <li><a href="logout.action"><span class="glyphicon glyphicon-off"></span></a><li>
 	  <li><a>&nbsp </a></li>
 	  </ul>
 	</div>
@@ -47,9 +47,9 @@
 		<li><a href="enterCreatePlan.action">发布计划</a></li>
 		<li><a href="hostelInfo.action">修改客栈信息</a></li>
 		<li><a href="currentFilm.action">入/离店登记</a></li>
-		<li><a href="enterSearch.action">查看会员的信息</a></li>
+		<%--<li><a href="enterSearch.action">查看会员的信息</a></li>--%>
 		<li><a href="enterQuestion.action">查看本店统计信息</a></li>
-		<li><a href="enterDown.action">房屋关闭计划</a></li>
+		<%--<li><a href="enterDown.action">房屋关闭计划</a></li>--%>
 	</ul>
 	<!--导航结束-->
 	

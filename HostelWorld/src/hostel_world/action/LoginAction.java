@@ -4,6 +4,7 @@ import java.util.Map;
 
 import hostel_world.model.Hostel;
 import hostel_world.model.HostelAccount;
+import hostel_world.model.list.HostelList;
 import hostel_world.service.*;
 import org.apache.struts2.interceptor.SessionAware;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -72,7 +73,6 @@ public class LoginAction implements Action,SessionAware{
 
 		if(identity==1) {
 			User user = userService.login(name, password);
-
 			if (user == null) {
 				return "failure";
 			}
@@ -87,6 +87,9 @@ public class LoginAction implements Action,SessionAware{
 				return "invalid";
 			}
 
+			HostelList hostelList = new HostelList();
+			hostelList.setHostelList(hostelService.getPassedHostelPlan());
+			sessionMap.put("hostelList", hostelList);
 			FilmList filmList = new FilmList();
 			filmList.setFilmList(planServiceBean.getFilmList());
 			sessionMap.put("filmList", filmList);

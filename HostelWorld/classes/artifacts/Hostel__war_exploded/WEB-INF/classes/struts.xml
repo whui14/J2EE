@@ -102,11 +102,11 @@
 <result>/cineplex/CreatePlan.jsp</result>
 </action>
 
-<action name="userFilmInfo" class="BuyTicketAction">
+<action name="userFilmInfo" class="BuyRoomAction">
 <result>/cineplex/FilmInfo.jsp</result>
 </action>
 
-<action name="buyTicket" class="BuyTicketAction" method="buyTicket">
+<action name="buyTicket" class="BuyRoomAction" method="buyTicket">
 <result>/cineplex/BuyTicket_Member.jsp</result>
 </action>
 
@@ -193,7 +193,7 @@
 <result>/cineplex/ScanningFilm.jsp</result>
 </action>
 
-<action name="afterCount" class="BuyTicketAction" method="afterCount">
+<action name="afterCount" class="BuyRoomAction" method="afterCount">
 <result>/cineplex/ScanningFilm.jsp</result>
 <result name="nsf">/cineplex/Warnning_NSF.jsp</result>
 </action>

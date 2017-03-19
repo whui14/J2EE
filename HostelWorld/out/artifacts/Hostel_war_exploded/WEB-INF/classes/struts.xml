@@ -7,7 +7,7 @@
 <package name="Hostel" extends="struts-default">
 
 <action name="login" class="LoginAction">
-<result name="success">/hostel/ScanningFilm.jsp</result>
+<result name="success">/hostel/ScanningHostel.jsp</result>
 	<result name="hostel">/hostel/Administrator.jsp</result>
 <result name="failure">/hostel/Fail.jsp</result>
 <result name="invalid">/hostel/Tip_invalid.jsp</result>
@@ -125,13 +125,21 @@
 <result>/hostel/CreateRoomPlan.jsp</result>
 </action>
 
-<action name="userFilmInfo" class="BuyTicketAction">
+<action name="userFilmInfo" class="BuyRoomAction">
 <result>/hostel/FilmInfo.jsp</result>
 </action>
 
-<action name="buyTicket" class="BuyTicketAction" method="buyTicket">
-<result>/hostel/BuyTicket_Member.jsp</result>
-</action>
+	<action name="userRoomInfo" class="BuyRoomAction">
+		<result>/hostel/RoomInfo.jsp</result>
+	</action>
+
+	<action name="buyRoom" class="BuyRoomAction" method="buyRoom">
+		<result>/hostel/BuyRoom_Member.jsp</result>
+	</action>
+
+<!--<action name="buyTicket" class="BuyRoomAction" method="buyTicket">-->
+<!--<result>/hostel/BuyTicket_Member.jsp</result>-->
+<!--</action>-->
 
 <action name="enterBuy" class="EnterBuyAction">
 <result>/hostel/BuyTicket.jsp</result>
@@ -246,10 +254,15 @@
 </action>
 
 <action name="memHomePage" class="MemberAction" method="enterHomePage">
-<result>/hostel/ScanningFilm.jsp</result>
+<result>/hostel/ScanningHostel.jsp</result>
 </action>
 
-<action name="afterCount" class="BuyTicketAction" method="afterCount">
+	<action name="afterCountMoney" class="BuyRoomAction" method="afterCount">
+		<result>/hostel/ScanningHostel.jsp</result>
+		<result name="nsf">/hostel/Warnning_NSF.jsp</result>
+	</action>
+
+<action name="afterCount" class="BuyRoomAction" method="afterCount">
 <result>/hostel/ScanningFilm.jsp</result>
 <result name="nsf">/hostel/Warnning_NSF.jsp</result>
 </action>

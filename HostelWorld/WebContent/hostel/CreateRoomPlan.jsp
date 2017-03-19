@@ -28,9 +28,9 @@
          <li class="active"><a href="adminHomePage.action">首页</a></li>
       </ul>
 	  <ul class="nav navbar-nav navbar-right">
-	  <li class="active"><a class="navbar-brand" href="#"><span class="glyphicon glyphicon-user"></span> Administrator</a></li>
+	  <li class="active"><a class="navbar-brand" href="#"><span class="glyphicon glyphicon-user"></span> <%=hostel.getHostelName()%></a></li>
 	  <li><a href="#"><span class="glyphicon glyphicon-cog"></span></a><li>
-	  <li><a href="adminLogout.action"><span class="glyphicon glyphicon-off"></span></a><li>
+	  <li><a href="logout.action"><span class="glyphicon glyphicon-off"></span></a><li>
 	  <li><a>&nbsp </a></li>
 	  </ul>
 	</div>

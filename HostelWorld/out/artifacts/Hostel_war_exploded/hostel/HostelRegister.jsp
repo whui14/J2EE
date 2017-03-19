@@ -76,7 +76,7 @@
 		</div>
 		<div class="form-group">
 			<label>具体地址：</label>
-			<input type="text" class="form-control" name="hostel.address" placeholder="introduction"/>
+			<input type="text" class="form-control" name="hostel.address" placeholder="address"/>
 		</div>
 
 		<div class="form-group">

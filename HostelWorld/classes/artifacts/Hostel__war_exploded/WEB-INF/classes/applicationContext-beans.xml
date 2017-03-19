@@ -42,7 +42,7 @@
 	<bean id="PutQuestionAction" class="hostel_world.action.PutQuestionAction" scope="prototype">
 	</bean>
 	
-	<bean id="BuyTicketAction" class="hostel_world.action.BuyTicketAction" scope="prototype">
+	<bean id="BuyTicketAction" class="hostel_world.action.BuyRoomAction" scope="prototype">
 	</bean>
 	
 	<bean id="EnterBuyAction" class="hostel_world.action.EnterBuyAction" scope="prototype">

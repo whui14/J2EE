@@ -111,5 +111,13 @@ public class HostelDaoImpl implements HostelDao {
         query.executeUpdate();
     }
 
+    @Override
+    public List<Object> getAllHostel() {
+        String hql="from Hostel p where p.pass=1";
+        Query query=getSession().createQuery(hql);
+        List list=query.list();
+        return list;
+    }
+
 
 }

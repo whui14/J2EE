@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -62,7 +63,7 @@
 		<div class="form-group">
 			<label>营业时间</label>
 			<div class="input-group date form_date"  data-date="" data-date-format="dd M yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-				<input class="form-control" size="16"  name="time" type="text" value='<jsp:getProperty name="hostel" property="time"/>' readonly>
+				<input class="form-control" size="16"  name="time" type="text" value="'<jsp:getProperty name="hostel" property="time"/>'" readonly>
 				<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
 				<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
 			</div>
@@ -96,14 +97,14 @@
 	<script type="text/javascript" src="bootstrap/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
 	<script type="text/javascript" src="bootstrap/js/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
 	<script type="text/javascript">
-    $('.form_datetime').datetimepicker({
+    $('.form_date').datetimepicker({
         language:  'fr',
         weekStart: 1,
         todayBtn:  1,
 		autoclose: 1,
 		todayHighlight: 1,
 		startView: 2,
-		format:'yyyy-mm-dd HH:ii:00',
+		format:'yyyy-mm-dd',
 		forceParse: 0
     });
 

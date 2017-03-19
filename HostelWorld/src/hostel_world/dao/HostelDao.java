@@ -38,4 +38,10 @@ public interface HostelDao {
     void publishHostelPlan(Integer id);
 
     void vetoPlan(Integer id);
+
+    /**
+     * 得到所有的Hostel
+     * @return
+     */
+    List<Object> getAllHostel();
 }

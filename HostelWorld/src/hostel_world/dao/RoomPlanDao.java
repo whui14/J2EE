@@ -71,6 +71,24 @@ public interface RoomPlanDao {
 	 * @return
 	 */
 	public List getCurrentRoomPlanId();
+
+	/**
+	 * 根据房间名得到房间的信息
+	 * @param title
+	 * @return
+	 */
+	public RoomPlan getRoom(String title);
+	/**
+	 * 添加新的房间入数据库
+	 * @param Room
+	 */
+	public void addNewRoom(RoomPlan Room);
+	/**
+	 * 判断某房间是否已经在数据库中了
+	 * @param title
+	 * @return
+	 */
+	public boolean searchRoom(String title);
 }
 
 

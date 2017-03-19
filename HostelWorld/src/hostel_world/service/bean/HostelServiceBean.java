@@ -82,4 +82,9 @@ public class HostelServiceBean implements HostelService {
         hostelDaoImpl.setPassValue(id, value);
     }
 
+    @Override
+    public List<Object> getPassedHostelPlan() {
+        return hostelDaoImpl.getAllHostel();
+    }
+
 }

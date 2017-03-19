@@ -108,8 +108,10 @@ public class RoomPlanDaoImpl implements RoomPlanDao {
 
 	
 	public List<Object> getUncheckedRoomPlan(Integer id) {
-		String hql="from RoomPlan p where p.id=?";
+
+		String hql="from RoomPlan p where p.hid=?";
 		Query query=getSession().createQuery(hql);
+		query.setInteger(0, id);
 		List list=query.list();
 		return list;
 	}
@@ -144,6 +146,33 @@ public class RoomPlanDaoImpl implements RoomPlanDao {
 		Query query=getSession().createQuery(hql);
 		List list=query.list();
 		return list;
+	}
+
+	@Override
+	public RoomPlan getRoom(String title) {
+		String hql="from RoomPlan f where f.title=?";
+		Query query=(Query) getSession().createQuery(hql);
+		query.setString(0, title);
+		List list=query.list();
+		RoomPlan room=(RoomPlan) list.get(0);
+		return room;
+	}
+
+	@Override
+	public void addNewRoom(RoomPlan Room) {
+		getSession().save(Room);
+	}
+
+	@Override
+	public boolean searchRoom(String title) {
+		String hql="from RoomPlan f where f.title=?";
+		Query query=(Query) getSession().createQuery(hql);
+		query.setString(0, title);
+		List list=query.list();
+		if(list.size()==0){
+			return false;
+		}
+		return true;
 	}
 
 }

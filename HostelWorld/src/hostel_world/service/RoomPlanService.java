@@ -53,11 +53,6 @@ public interface RoomPlanService {
 	 */
 	public RoomPlan getRoomPlanInfo(Integer id);
 	/**
-	 * 得到正在上映的电影列表
-	 * @return
-	 */
-	public List getFilmList();
-	/**
 	 * 返回某部电影的将要上映的计划
 	 * @param title
 	 * @return
